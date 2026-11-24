@@ -1,5 +1,11 @@
 .venv
 
-# data
+# dataset
 *.zip
 *.csv
+
+# catboost
+*/catboost_info
+
+# site
+task_4/monitoring/data/*
