@@ -1,0 +1,11 @@
+groups:
+  - name: ml_model_alerts
+    rules:
+      - alert: ModelF1TooLow
+        expr: model_f1_score{dataset="current", gender="all"} < 0.55
+        for: 15s
+        labels:
+          severity: warning
+        annotations:
+          summary: "F1 score упал ниже порога 0.55"
+          description: "Метрика model_f1_score опустилась ниже допустимого минимума 0.55."
